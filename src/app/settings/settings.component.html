@@ -1,0 +1,86 @@
+
+<body class="main-container">
+    <mat-toolbar class="mb-0" >
+     <div class="" (click)="opened=!opened">
+       <div class="bar1"></div>
+       <div class="bar2"></div>
+       <div class="bar3"></div>
+     </div>
+     <img src="./assets/img/Asset1.png" class="justify-content-center align-items-center mx-2" style="width: 50px; height: 50px;">
+     <h1 class="mb-0">Bariflo Labs</h1>
+     </mat-toolbar>
+ 
+     <mat-sidenav-container>
+         <mat-sidenav mode="side" [(opened)]="opened">
+          <mat-nav-list>  
+            <!-- Menu item with a sub-menu -->
+            <mat-list-item>
+              <a mat-list-item href="dashboard">Accounts</a>
+            </mat-list-item>
+            <mat-list-item>
+              <a mat-list-item href="#">New Devices</a>
+            </mat-list-item>
+            <mat-list-item>
+              <a mat-list-item href="users">Users</a>
+            </mat-list-item>
+            <mat-list-item (click)="toggleSubMenu('submenu1')">
+              <span>Settings</span>
+              
+            </mat-list-item>
+            <mat-list-item *ngIf="isSubMenuOpen('submenu1')">
+              <a mat-list-item href="settings">Device Types</a>
+             
+            </mat-list-item>
+          </mat-nav-list>
+         </mat-sidenav>
+         <mat-sidenav-content>
+           <button class="btn btn-primary" (click)="openDialog5()">New Device Types</button>
+           <hr>
+           <div>
+             <mat-card>   
+               <mat-card-header>
+                 Device Types
+               </mat-card-header>
+               <hr>
+               <mat-card-content>
+                   <div class="table-responsive text-nowrap">
+                     <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                           <tr>
+                             <th>Name</th>
+                             <th>Version</th>
+                             <th>Status</th>
+                             <th>Action</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                  
+                                </td>
+                                <td>
+                                  
+                                </td>
+                                <td>
+                                  
+                                </td>
+                                <td>
+                                  <button class="btn btn-warning mx-1"><i class="bi bi-pencil-square" (click)="openDialog6()"></i></button>
+                                  <button class="btn btn-danger mx-1"><i class="bi bi-trash"></i></button>
+                                  <button class="btn btn-primary mx-1"><i class="bi bi-grid-fill"(click)="onClick3()"></i></button>
+                                </td>
+                                
+                            </tr>
+                        </tbody>
+ 
+                     </table>
+                   </div>
+               </mat-card-content>
+             </mat-card>
+           </div>
+         </mat-sidenav-content>
+     </mat-sidenav-container>
+    
+ 
+ </body>
+

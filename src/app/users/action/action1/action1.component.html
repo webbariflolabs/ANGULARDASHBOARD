@@ -1,0 +1,126 @@
+<body class="main-container">
+    <mat-toolbar class="mb-0" >
+        <div class="" (click)="opened=!opened">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+        <img src="./assets/img/Asset1.png" class="justify-content-center align-items-center mx-2" style="width: 50px; height: 50px;">
+        <h1 class="mb-0">Bariflo Labs</h1>
+        </mat-toolbar>
+
+     <mat-sidenav-container>
+        <mat-sidenav mode="side" [(opened)]="opened">
+            <mat-nav-list>  
+                <!-- Menu item with a sub-menu -->
+                <mat-list-item>
+                  <a mat-list-item href="dashboard">Accounts</a>
+                </mat-list-item>
+                <mat-list-item>
+                  <a mat-list-item href="#">New Devices</a>
+                </mat-list-item>
+                <mat-list-item>
+                  <a mat-list-item href="users">Users</a>
+                </mat-list-item>
+                <mat-list-item (click)="toggleSubMenu('submenu2')">
+                  <span>Settings</span>
+                  
+                </mat-list-item>
+                <mat-list-item *ngIf="isSubMenuOpen('submenu2')">
+                  <a mat-list-item href="#">Device Types</a>
+                 
+                </mat-list-item>
+              </mat-nav-list>
+
+        </mat-sidenav>
+        <div class="row mt-5 pt-5 mx-3">
+        <div class="col">
+            <mat-card>   
+                <mat-card-header>
+                  Assigned Accounts
+                </mat-card-header>
+                <hr>
+                <mat-card-content>
+                    <span class="example-list-section">
+                        <mat-checkbox class="example-margin"  [color]="task.color">Check me!</mat-checkbox>
+                    </span>
+                    
+                </mat-card-content>
+            </mat-card>
+        </div>
+         <div class="col">
+            <mat-card>   
+                <mat-card-header>
+                  Assigned Permission
+                </mat-card-header>
+                <hr>
+                <mat-card-content>
+                    <span class="example-list-section">
+                        <mat-checkbox class="example-margin"  [color]="task.color">USER_ADD</mat-checkbox>
+                      </span>
+                      <hr>
+                      <span class="example-list-section">
+                        <mat-checkbox class="example-margin"  [color]="task.color">USER_EDIT</mat-checkbox>
+                    </span>
+                    <hr>
+                    <span class="example-list-section">
+                        <mat-checkbox class="example-margin"  [color]="task.color">USER_DELETE</mat-checkbox>
+                    </span>
+                    <hr>
+                    <span class="example-list-section">
+                        <mat-checkbox class="example-margin"  [color]="task.color">USER_VIEW</mat-checkbox>
+                    </span>
+                    <hr>
+                    <span class="example-list-section">
+                        <mat-checkbox class="example-margin"  [color]="task.color">ACCOUNT_ADD</mat-checkbox>
+                    </span>
+                    <hr>
+                    <span class="example-list-section">
+                        <mat-checkbox class="example-margin"  [color]="task.color">ACCOUNT_EDIT</mat-checkbox>
+                    </span>
+                    <hr>
+                    
+                   
+                      <span class="example-list-section">
+                        <mat-checkbox class="example-margin"  [color]="task.color">ACCOUNT_VIEW</mat-checkbox>
+                    </span>
+                    <hr>
+                    <span class="example-list-section">
+                        <mat-checkbox class="example-margin"  [color]="task.color">ACCOUNT_DELETE</mat-checkbox>
+                    </span>
+                    <hr>
+                    <span class="example-list-section">
+                        <mat-checkbox class="example-margin"  [color]="task.color">DEVICE_ADD</mat-checkbox>
+                    </span>
+                    <hr>
+                    <span class="example-list-section">
+                        <mat-checkbox class="example-margin"  [color]="task.color">DEVICE_EDIT</mat-checkbox>
+                    </span>
+                    <hr>
+                    <span class="example-list-section">
+                        <mat-checkbox class="example-margin"  [color]="task.color">DEVICE_VIEW</mat-checkbox>
+                    </span>
+                    <hr>
+                    <span class="example-list-section">
+                        <mat-checkbox class="example-margin"  [color]="task.color">DEVICE_DELETE</mat-checkbox>
+                    </span>
+                    <hr>
+                    <span class="example-list-section">
+                        <mat-checkbox class="example-margin"  [color]="task.color">DEVICE_INSTRUCTION</mat-checkbox>
+                    </span>
+                    <hr>
+                    <span class="example-list-section">
+                        <mat-checkbox class="example-margin"  [color]="task.color">SETTINGS</mat-checkbox>
+                    </span>
+                    <br>
+                    <br>
+                    <button mat-raised-button color="primary">save</button>
+                </mat-card-content>
+            </mat-card>
+         </div>
+        </div>
+     </mat-sidenav-container>  
+     
+</body>
+
+
